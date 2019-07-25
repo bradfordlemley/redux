@@ -7,6 +7,8 @@
     "react-test-renderer": "^16.8.6"
   },
   "dependencies": {
+    "@stated-library/base": "^1.0.6",
+    "@stated-library/core": "^1.0.6",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -20,7 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "test": "react-scripts test --env=node"
+    "test": "react-scripts test --env=jsdom"
   },
   "browserslist": [
     ">0.2%",
