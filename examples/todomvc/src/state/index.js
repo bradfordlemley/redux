@@ -1,8 +1,14 @@
+/*
+This file contains the entirity global application state and logic.
+** components get global state from observables exported from this file.
+** components invoke global functionality via functions exported from this file.
+*/
+
 import memoize from 'memoize-one';
-import TodosLib from './todos';
-import VisLib from './visibility';
 import { mapState, devTools } from '@stated-library/core';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+import TodosLib from './todos';
+import VisLib from './visibility';
 
 export const todosLib = TodosLib();
 export const visLib = VisLib();
@@ -25,24 +31,13 @@ const getVisibleTodos = memoize(
   }
 )
 
+export const todos$ = todosLib.state$;
+export const visibilityFilter$ = visLib.state$;
+
 export const visibleTodos$ = mapState(
-  [todosLib.state$, visLib.state$],
-  ([todosState, visState]) => getVisibleTodos(visState, todosState)
+  [todos$, visibilityFilter$],
+  ([todos, visibilityFilter]) => getVisibleTodos(visibilityFilter, todos)
 )
-
-// const getVisibilityFilter = state => state.visibilityFilter
-
-// const getTodos = state => state.todos
-
-// export const getCompletedTodoCount = createSelector(
-//   [getTodos],
-//   todos => (
-//     todos.reduce((count, todo) =>
-//       todo.completed ? count + 1 : count,
-//       0
-//     )
-//   )
-// )
 
 const getCompletedTodoCount = memoize(
   todos => (
@@ -54,11 +49,12 @@ const getCompletedTodoCount = memoize(
 )
 
 export const completedTodoCount$ = mapState(
-  todosLib.state$,
-  todoState => getCompletedTodoCount(todoState)
+  todos$,
+  todos => getCompletedTodoCount(todos)
 );
 
-export const todoActions = {
+export const actions = {
+  addTodo: todosLib.add,
   clearCompleted: todosLib.clearCompleted,
   completeAllTodos: todosLib.completeAll,
   editTodo: todosLib.edit,

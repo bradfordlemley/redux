@@ -1,5 +1,5 @@
 import React from 'react';
 import Header from '../components/Header'
-import { todosLib } from '../state'
+import { actions } from '../state'
 
-export default () => <Header addTodo={todosLib.add} />
+export default () => <Header addTodo={actions.addTodo} />
