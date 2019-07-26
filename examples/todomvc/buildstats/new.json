@@ -1,0 +1,90 @@
+
+> todomvc@0.0.1 analyze /Users/bradlemley/prj/redux/examples/todomvc
+> source-map-explorer 'build/static/js/*.js' "--json"
+
+{
+  "results": [
+    {
+      "bundleName": "build/static/js/2.d8613cf5.chunk.js",
+      "totalBytes": 134988,
+      "unmappedBytes": 130,
+      "files": {
+        "react/index.js": 46,
+        "@stated-library/core/dist/index.es.js": 4138,
+        "classnames/index.js": 475,
+        "@stated-library/react/dist/index.es.js": 3462,
+        "@babel/runtime/helpers/esm/defineProperty.js": 182,
+        "@babel/runtime/helpers/esm/classCallCheck.js": 156,
+        "@babel/runtime/helpers/esm/createClass.js": 285,
+        "@babel/runtime/helpers/esm/getPrototypeOf.js": 191,
+        "@stated-library/base/dist/index.es.js": 2213,
+        "@babel/runtime/helpers/esm/slicedToArray.js": 100,
+        "@babel/runtime/helpers/esm/arrayWithHoles.js": 41,
+        "@babel/runtime/helpers/esm/iterableToArrayLimit.js": 236,
+        "@babel/runtime/helpers/esm/nonIterableRest.js": 87,
+        "@babel/runtime/helpers/esm/typeof.js": 452,
+        "@babel/runtime/helpers/esm/possibleConstructorReturn.js": 133,
+        "@babel/runtime/helpers/esm/assertThisInitialized.js": 121,
+        "@babel/runtime/helpers/esm/setPrototypeOf.js": 92,
+        "@babel/runtime/helpers/esm/inherits.js": 291,
+        "@babel/runtime/helpers/esm/objectSpread.js": 394,
+        "lodash/isObject.js": 113,
+        "memoize-one/dist/memoize-one.esm.js": 355,
+        "object-assign/index.js": 931,
+        "webpack/buildin/global.js": 148,
+        "lodash/_root.js": 133,
+        "lodash/_Symbol.js": 62,
+        "react-dom/index.js": 239,
+        "lodash/throttle.js": 280,
+        "react/cjs/react.production.min.js": 6489,
+        "react-dom/cjs/react-dom.production.min.js": 106131,
+        "scheduler/index.js": 47,
+        "scheduler/cjs/scheduler.production.min.js": 4606,
+        "lodash/debounce.js": 936,
+        "lodash/now.js": 72,
+        "lodash/_freeGlobal.js": 110,
+        "lodash/toNumber.js": 395,
+        "lodash/isSymbol.js": 120,
+        "lodash/_baseGetTag.js": 192,
+        "lodash/_getRawTag.js": 237,
+        "lodash/_objectToString.js": 87,
+        "lodash/isObjectLike.js": 80,
+        "<unmapped>": 130
+      }
+    },
+    {
+      "bundleName": "build/static/js/main.c59c9f14.chunk.js",
+      "totalBytes": 6295,
+      "unmappedBytes": 183,
+      "files": {
+        "state/todos.js": 902,
+        "components/TodoTextInput.js": 859,
+        "components/Header.js": 271,
+        "state/index.js": 645,
+        "state/visibility.js": 165,
+        "constants/TodoFilters.js": 95,
+        "containers/Header.js": 76,
+        "components/Link.js": 175,
+        "containers/FilterLink.js": 191,
+        "components/Footer.js": 589,
+        "components/TodoItem.js": 1104,
+        "components/TodoList.js": 187,
+        "containers/VisibleTodoList.js": 84,
+        "components/MainSection.js": 427,
+        "containers/MainSection.js": 142,
+        "components/App.js": 109,
+        "index.js": 91,
+        "<unmapped>": 183
+      }
+    },
+    {
+      "bundleName": "build/static/js/runtime~main.a8a9905a.js",
+      "totalBytes": 1501,
+      "unmappedBytes": 62,
+      "files": {
+        "../webpack/bootstrap": 1439,
+        "<unmapped>": 62
+      }
+    }
+  ]
+}
