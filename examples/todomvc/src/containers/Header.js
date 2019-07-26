@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
+import React from 'react';
 import Header from '../components/Header'
-import { addTodo } from '../actions'
+import { todosLib } from '../state'
 
-export default connect(null, { addTodo })(Header)
+export default () => <Header addTodo={todosLib.add} />

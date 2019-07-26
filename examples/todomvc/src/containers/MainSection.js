@@ -1,23 +1,17 @@
-import { connect } from 'react-redux'
-import * as TodoActions from '../actions'
-import { bindActionCreators } from 'redux'
+import { mapState } from '@stated-library/core';
+import { connect } from '@stated-library/react';
+import { completedTodoCount$, todosLib, todoActions } from '../state';
+
 import MainSection from '../components/MainSection'
-import { getCompletedTodoCount } from '../selectors'
 
+const props$ = mapState(
+  [todosLib.state$, completedTodoCount$],
+  ([todosState, completedCount]) => ({
+    completedCount,
+    todosCount: todosState.length,
+    actions: todoActions,
+  })
+);
 
-const mapStateToProps = state => ({
-  todosCount: state.todos.length,
-  completedCount: getCompletedTodoCount(state)
-})
-
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(TodoActions, dispatch)
-})
-
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MainSection)
+export default connect(props$)(MainSection);
 
